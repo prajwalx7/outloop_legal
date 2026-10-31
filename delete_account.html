@@ -94,24 +94,27 @@
     <div class="metadata">Compliance with Google Play & App Store Standards • Effective: October 2026</div>
 
     <h2>1. Overview & Immediate In-App Deletion</h2>
-    <p>In accordance with user privacy rights and app store data safety regulations, Hublu provides an instantaneous and permanent self-serve mechanism to delete your account and all associated data.</p>
+    <p>In accordance with user privacy rights and Google Play & Apple App Store data safety regulations, Hublu provides an instantaneous, self-serve mechanism to permanently delete your account and all associated data.</p>
     <p>To delete your account immediately inside the app:</p>
     <ol>
       <li>Navigate to the <strong>Profile</strong> tab in Hublu.</li>
-      <li>Scroll down to the <strong>Danger Zone</strong> section.</li>
-      <li>Tap <strong>Delete Account</strong> and confirm the warning prompt.</li>
+      <li>Tap <strong>Account Settings</strong> (the first category card).</li>
+      <li>Scroll down to the <strong>Danger Zone</strong> section at the bottom of the screen.</li>
+      <li>Tap <strong>Delete Account</strong>, enter your credentials if prompted to verify ownership, and confirm the permanent deletion.</li>
     </ol>
 
     <h2>2. What Data Is Permanently Purged</h2>
-    <p>Upon triggering account deletion, the following data is irrevocably deleted:</p>
+    <p>Upon triggering account deletion, the following data is irrevocably deleted from both our cloud database (Cloud Firestore & Firebase Auth) and your local device:</p>
     <ul>
-      <li><strong>Authentication Records:</strong> Your Firebase Authentication user account, user UID, linked authentication tokens, email address, display name, and avatar URL are deleted immediately from Firebase servers.</li>
-      <li><strong>Local Application State:</strong> Your local preferences, enabled networks, custom filter overrides, strict mode configurations, and notification permissions are wiped.</li>
-      <li><strong>Usage Analytics & Counters:</strong> All local statistics (number of short videos hidden, feeds blocked, and focus time saved) are purged from your device storage.</li>
+      <li><strong>Authentication Records:</strong> Your Firebase Authentication user account, unique UID, authentication tokens, email address, display name, and avatar are immediately purged.</li>
+      <li><strong>Onboarding & Baseline Audit Data:</strong> Your Day-1 onboarding responses, calculated scroll hours lost, baseline goals, scroll triggers, and initial audit report (<code>firstReport</code>) are permanently erased.</li>
+      <li><strong>Local Application State & Permissions:</strong> Local preferences, enabled networks, custom filter overrides, app blocker configurations, and device permission states are wiped.</li>
+      <li><strong>Usage & Shielding Statistics:</strong> Synchronized and local habit telemetry (including short videos hidden, feeds blocked, ads blocked, and focus time saved) are purged completely.</li>
+      <li><strong>Push Notification Tokens:</strong> Firebase Cloud Messaging (FCM) device registration tokens are deleted so you will never receive further alerts or updates.</li>
     </ul>
 
     <h2>3. Data Retention Timeline</h2>
-    <p>Deletion is immediate for user identity and local data. Any operational server logs related to authentication events are automatically expunged within 30 days as per Google Cloud standard security protocols.</p>
+    <p>Deletion is initiated immediately for your Hublu identity, Firestore profile, local settings, statistics, and browser sessions. Service-provider security, fraud-prevention, and operational logs may be retained for limited periods under the provider's legal and security requirements.</p>
 
     <h2>4. Manual Deletion Requests</h2>
     <p>If you have uninstalled the app or are unable to access your device, you can request a manual deletion of your account records by emailing our data support team from the email address associated with your Hublu account.</p>
