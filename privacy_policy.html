@@ -99,28 +99,39 @@
     <h2>2. What Information We Collect</h2>
     <ul>
       <li><strong>Account Information:</strong> When you sign in using Apple, Google, or email authentication, we receive the account information you choose to share, such as your name, email address, and profile picture, strictly to maintain your account identity and sync your settings across devices.</li>
-      <li><strong>Local Usage & Shielding Statistics:</strong> Counters for short videos hidden and infinite feeds blocked are computed locally on your device to display your daily focus insights. These metrics stay strictly in your device's local storage.</li>
+      <li><strong>Profile and Baseline Audit Information:</strong> We store your onboarding choices, such as age, estimated daily scrolling time, focus goals, scrolling triggers, selected networks, and baseline audit reports (<code>firstReport</code>), so your insights and settings are accurately synchronized.</li>
+      <li><strong>Usage & Shielding Statistics:</strong> Counters for short videos hidden, feeds blocked, ads blocked, and estimated time saved are computed on your device and synchronized to your Hublu account in Firebase Cloud Firestore so your insights can be restored across devices.</li>
       <li><strong>No Browsing History or Credentials:</strong> When you access social networks through Hublu, you are browsing directly within a secure, sandboxed webview. Hublu does not inspect, harvest, or log your account passwords, search histories, private messages, or payment details.</li>
     </ul>
 
-    <h2>3. How We Use Information</h2>
+    <h2>3. Device Permissions & System Access</h2>
+    <p>To deliver core habit-breaking capabilities, Hublu requests explicit, optional device permissions. We strictly follow data-minimization principles:</p>
+    <ul>
+      <li><strong>AccessibilityService API (Android App Blocker):</strong> On Android devices, Hublu offers an optional native App Blocker feature. When enabled by the user, Hublu utilizes the Android <code>AccessibilityService API</code> solely to detect when a designated social media app (e.g. YouTube, Instagram, X, Facebook, Snapchat, Reddit) is launched into the foreground, allowing Hublu to display an intentional shield barrier. <strong>Hublu does not collect, record, log, or transmit any personal information, keystrokes, messages, or screen content.</strong> Our accessibility service configuration strictly enforces <code>canRetrieveWindowContent="false"</code>. This permission is 100% voluntary and can be enabled or revoked at any time in <em>Profile &rarr; Permissions</em> or your device's System Settings.</li>
+      <li><strong>Notification Permission (Android 13+ & iOS):</strong> Used strictly to deliver mindful quotes, habit awareness reminders, service announcements, and subscription updates via Firebase Cloud Messaging and local notifications. You can toggle notifications on or off at any time in <em>Profile &rarr; Permissions</em>.</li>
+      <li><strong>Package Visibility Queries:</strong> In accordance with Google Play package visibility policies, Hublu only queries specific package names for our supported social applications to verify whether they are installed, enabling automatic protection for the apps you selected during onboarding. Blanket package visibility (<code>QUERY_ALL_PACKAGES</code>) is strictly prohibited and stripped from our app.</li>
+    </ul>
+
+    <h2>4. How We Use Information</h2>
     <p>Any collected information is utilized strictly to:</p>
     <ul>
       <li>Authenticate your session securely via Firebase Authentication.</li>
       <li>Remember your enabled platforms and custom filter configurations.</li>
-      <li>Deliver non-algorithmic notification alerts for direct messages (if enabled).</li>
+      <li>Synchronize your habit insights, time saved, and Day-1 baseline audit records.</li>
+      <li>Deliver non-algorithmic notification alerts, daily mindful quotes, and product updates (if enabled).</li>
+      <li>Facilitate in-app ratings via Google Play In-App Review and Apple StoreKit frameworks without sharing private ratings with third parties.</li>
     </ul>
 
-    <h2>4. Data Storage & Security</h2>
-    <p>Authentication tokens and account profiles are safeguarded using Google Firebase's industry-standard infrastructure. Local settings and filter rules are persisted securely in your device's protected app sandbox.</p>
+    <h2>5. Data Storage & Security</h2>
+    <p>Authentication records, account profiles, onboarding choices, baseline audit records, connected-network labels, and shielding statistics are stored using Google Firebase Authentication and Cloud Firestore. Local settings, social-network cookies, browsing data, and filter rules are stored in your device's protected app sandbox. Social-network cookies and site storage are excluded from Hublu backups and device transfers.</p>
 
-    <h2>5. Third-Party Services</h2>
+    <h2>6. Third-Party Services</h2>
     <p>Hublu interacts with third-party web services (e.g. YouTube, Instagram, X, Facebook, Reddit, Snapchat) via standard browser sessions. Third-party sites govern their own privacy practices according to their respective policies. Hublu's filter rules strip distracting feeds, algorithm recommendation carousels, and tracking elements.</p>
 
-    <h2>6. Your Rights & Account Deletion</h2>
-    <p>You maintain full control over your data. You may delete your account and all associated Firebase records at any time directly within the app under Profile &rarr; Delete Account.</p>
+    <h2>7. Your Rights & Account Deletion</h2>
+    <p>You maintain full control over your data. You may delete your account, Hublu profile, synchronized statistics, local settings, and Hublu browser sessions at any time directly within the app under <strong>Profile &rarr; Account Settings &rarr; Delete Account</strong>. Upon confirmation, all cloud and local records are permanently wiped. Service-provider security and operational logs may be retained for limited periods under the provider's legal and security requirements.</p>
 
-    <h2>7. Contact Information</h2>
+    <h2>8. Contact Information</h2>
     <p>If you have any questions regarding this Privacy Policy, you may contact our privacy team at <a href="mailto:delsigate@gmail.com">delsigate@gmail.com</a>.</p>
   </div>
 </body>
